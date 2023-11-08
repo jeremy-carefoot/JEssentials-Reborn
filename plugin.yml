@@ -1,0 +1,137 @@
+main: com.bluecreeper111.JEssentialsRB.main.Main
+name: JEssentialsRB
+version: 1.0.0
+api-version: 1.19
+author: bluecreeper111
+description: Versatile "essentials" plugin for Minecraft servers.
+commands:
+  heal:
+    description: Heal yourself or another player.
+    usage: /<command>
+  feed:
+    description: Feed yourself or another player.
+    usage: /<command>
+    aliases: eat
+  clear:
+    description: Clear your inventory.
+    usage: /<command>
+    aliases: clearinventory
+  jhelp:
+    description: Displays a Just Essentials help menu.
+    usage: /<command>
+    aliases: [jessentialshelp, jerbhelp, jehelp]
+  back:
+    description: Sends you to your last location.
+    usage: /<command>
+    aliases: return
+  fly:
+    description: Toggle your flight.
+    usage: /<command>
+  broadcast:
+    description: Send a message to the entire server.
+    usage: /<command>
+    aliases: bcast
+  chatclear:
+    description: Clear your personal chat or the entire server's chat.
+    usage: /<command>
+    aliases: [chatc, clearchat, cchat]
+  enderchest:
+    description: Open your or another player's enderchest.
+    usage: /<command>
+    aliases: [echest, endersee, ec]
+  god:
+    description: Disables you from taking damage.
+    usage: /<command>
+    aliases: tgm
+  hat:
+    description: Allows you to put on a hat!
+    usage: /<command>
+    aliases: head
+  workbench:
+    description: Opens a crafting table.
+    usage: /<command>
+    aliases: [wb,wbench, craft]
+  jereborn:
+    description: Information about plugin, and ability to reload config.
+    usage: /<command>
+    aliases: [justessentialsreborn, jerb, jessentials, je]
+  weather:
+    description: Change the weather.
+    usage: /<command>
+    aliases: [rain, sky, storm, sun]
+  time:
+    description: Set or see the time.
+    usage: /<command>
+    aliases: [day, night]
+  gamemode:
+    description: Change you or another player's gamemode.
+    usage: /<command>
+    aliases: [creative, creativemode, gmc, survival, survivalmode, gms, spectator, spectatormode, gmsp, adventure, adventuremode, gma]
+  sudo:
+    description: Force another player to execute a command.
+    usage: /<command>
+  speed:
+    description: Modify your movement speed.
+    usage: /<command>
+  skull:
+    description: Get the head of a player.
+    usage: /<command>
+    aliases: head
+  more:
+    description: Tops up the item you are holding to maximum amount (usually 64).
+    usage: /<command>
+  me:
+    description: Describes an action in context of the player.
+    usage: /<command>
+    aliases: [action, describe]
+  motd:
+    description: Read, set, or toggle the MOTD.
+    usage: /<command>
+  exp:
+    description: Set, modify, or view a player's exp.
+    usage: /<command>
+    aliases: xp
+  enchant:
+    description: Enchant an item you are holding.
+    usage: /<command>
+    aliases: enchantment
+  spawn:
+    description: Sends you to spawn.
+    usage: /<command>
+  setspawn:
+    description: Set the server spawn.
+    usage: /<command>
+  setworldspawn:
+    description: Set the world spawnpoint.
+    usage: /<command>
+  sethome:
+    description: Set a home.
+    usage: /<command>
+    aliases: createhome
+  delhome:
+    description: Delete a home.
+    usage: /<command>
+    aliases: [remhome, rmhome, deletehome]
+  home:
+    description: Teleport to a home.
+    usage: /<command>
+    aliases: homes
+  item:
+    description: Give yourself an item.
+    usage: /<command>
+    aliases: i
+  getpos:
+    description: Get a players position.
+    usage: /<command>
+    aliases: getposition
+  afk:
+    description: Mark yourself or another player as AFK.
+    usage: /<command>
+  repair:
+    description: Repair items in your inventory.
+    usage: /<command>
+    aliases: fix
+  kit: 
+    description: Ability to obtain premade kits.
+    usage: /<command>
+    aliases: [kits, kitcreate, kitdel, kitshow, kitoptions, kitreset]

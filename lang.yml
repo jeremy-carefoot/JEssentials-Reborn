@@ -1,0 +1,169 @@
+# Just Essentials Reborn Language File (v.1.0.0)
+# -+-
+# NOTE: If you are familiar with languages other than english, we are currently recruiting translators.
+# If you are interested in assisting with this project, please head to our Discord or GitHub page.
+# -+-
+
+# Placeholders are specified in the line ABOVE the message containing them
+
+onlyPlayerCanExecuteCommand: '&cSorry, only players can execute this command.'
+noPermission: '&cYou do not have permission to do that!'
+# %target% - Replaced with the target players name
+playerNotFound: '&cThe player &4%target% &cwas not found!'
+# %syntax% - Replaced with correct command syntax
+incorrectSyntax: '&cIncorrect command syntax! Try &4%syntax%'
+playerHealed: '&6You have been healed.'
+# %target% - Replaced with target player healed
+targetPlayerHealed: '&aPlayer &6%target% &ahas been healed.'
+playerFed: '&6Your hunger has been satisfied.'
+# %target% - Replaced with target player fed
+targetPlayerFed: '&aPlayer &6%target% &ahas been fed.'
+inventoryCleared: '&6Your inventory has been cleared.'
+# %target% - Replaced with target player whos inventory is cleared
+targetInventoryCleared: '&aCleared player &6%target%&as inventory.'
+# %number% - Replaced with invalid page number
+pageNotFound: '&cPage &4%number% &cwas not found!'
+# %argument% - Replaced with invalid argument
+invalidNumber: '&c%argument% &4is not a valid number!'
+teleported: '&6You have been teleported!'
+# %time% - Replaced with the time (in seconds) until teleported
+teleportingIn: '&6You will be teleported in &c%time% &6seconds.'
+teleportCancelled: '&cTeleportation cancelled. (Dont move!)'
+noRecentTeleports: '&6You have not teleported recently!'
+# %toggle% - Replaced with whether or not the players flight was disabled or enabled
+flightToggled: '&6Your flight has been &c%toggle%&6.'
+# %target% - Replaced with target player
+# %toggle% - Replaced with whether or not the players flight was disabled or enabled
+targetFlightToggled: '&6Player &e%target%&6s flight has been &c%toggle%.'
+noBroadcastNothing: '&cYou cannot broadcast nothing!'
+# %player% - Replaced with player who cleared chat
+chatClearServer: '&aThe chat has been cleared by &2%player%'
+chatClearIndividual: '&aYour chat has been cleared.'
+# %toggle% - Replaced with either 'enabled' or 'disabled' depending on toggle
+godToggled: '&6God mode has been &c%toggle%&6.'
+# %toggle% - Replaced with either 'enabled' or 'disabled' depending on toggle
+# %target% - Replaced with the target user's name
+targetGodToggled: '&6God mode for player &c%target% &6has been &c%toggle%&6.'
+mustHoldItem: '&cYou must be holding an item to do that!'
+hatRemoved: '&cYour hat has been removed.'
+noHat: '&4You do not have a hat on!'
+newHat: '&6Enjoy your new hat!'
+hatRestricted: '&4That type of hat is restricted.'
+reloadConfig: '&aConfiguration file reloaded.'
+weatherSunny: '&6The weather has been cleared.'
+weatherStormy: '&6The weather has been set to &cstorm'
+# %world% - Replaced with the world the time is set in
+# %time% - Replaced with the time that has been set
+time: '&6Time set to &c%time% &6in world &c%world%'
+# %time% - Replaced with the current time in ticks
+currentTime: '&6The time is &c%time%'
+# %query% - Name of world that couldn't be found
+worldNotFound: '&cWorld &4%query% &ccould not be found!'
+# %gamemode% - Replaced with the name of the gamemode the player was switched to
+gamemodeSwitch: '&6Your gamemode has been switched to &c%gamemode%'
+# %gamemode% - Replaced with the name of the gamemode the target player was switched to
+# %target% - Replaced with the name of the target player
+playerModeSwitched: '&6Player &c%target% &6has had their gamemode switched to &c%gamemode%'
+# %target% - Replaced with the name of the player sudoed
+playerSudoed: '&6Player &c%target% &6has been sudoed.'
+playerCouldNotBeSudoed: '&cThat player could not be sudoed!'
+speedOutOfBounds: '&cThat speed is out of bounds! (1 - 10)'
+# %movement% - Replaced with either flying or walking.
+# %speed% - Replaced with a value from 1 - 10, depending on speed set.
+playerSpeedSwitched: '&6Your &c%movement% &6speed has been switched to &c%speed%'
+# %movement% - Replaced with either flying or walking.
+# %speed% - Replaced with a value from 1 - 10, depending on speed set.
+# %target% - Replaced with name of player who's speed was switched
+playerSpeedSwitchedSender: '&6Player &c%target% &6has had their &c%movement% &6speed set to &c%speed%'
+# %player% - Replaced with the name of the player's skull
+givenSkull: '&6You have been given the skull of &c%player%'
+# %player% - Replaced with the name of the player's skull
+skullModified: '&6The new owner of the skull you are holding is &c%player%'
+mustHoldItem: '&cYou must hold an item!'
+maxStack: '&6You have been given the maximum amount of the item you are holding.'
+# %toggle% - Replaced with either enabled or disabled depending on whether or not the MOTD was turned on or off
+motdToggled: '&6The MOTD has been &c%toggle%'
+motdSet: '&6The MOTD has been set!'
+# %target% - Replaced with the player who's XP you are viewing
+# %exp% - Replaced with the amount of EXP
+viewExp: '&aPlayer &2%target% &ahas &2%exp% &alevels of EXP.'
+# %exp% - Replaced with amount of EXP received
+xpGiven: '&aYou have been given &2%exp% &aEXP.'
+# %target% - Replaced with the player who you are giving EXP to
+# %exp% - Replaced with the amount of EXP given
+xpGivenSender: '&aPlayer &2%target% &ahas been given &2%exp% &aEXP.'
+# %exp% - Replaced with what EXP was set too.
+xpSet: '&aYour EXP level has been set to &2%exp% &aEXP.'
+# %target% - Replaced with the player who you are setting EXP
+# %exp% - Replaced with the amount of EXP they have been set too
+xpSetSender: '&aPlayer &2%target% &ahas had their EXP level set to &2%exp% &aEXP.'
+# %enchant% - Replaced with name of enchantment
+enchantDoesNotExist: '&cEnchantment &4%enchant% &cdoes not exist!'
+# %enchant% - Replaced with name of enchantment
+# %enchlevel% - Replaced with level of enchantment
+itemEnchanted: '&6Your item has been enchanted with &c%enchant% &6level &c%enchlevel%'
+# %target% - Replaced with target player's name teleporting
+playerTeleportingSender: '&6Player &c%target% &6is now teleporting...'
+noSpawn: '&cSpawn is not set or does not exist!'
+spawnSet: '&6The spawnpoint has been set.'
+worldSpawnSet: '&6The world spawnpoint has been set.'
+maximumHomes: '&cYou already have the maximum number of homes!'
+homeAlreadySet: '&cHome is already set!'
+homeSet: '&6Your home has been set.'
+# %homename% - Replaced with name of home
+homeSetMultiple: '&6Home &c%homename% &6has been set!'
+homeDeleted: '&6Home deleted!'
+# %homename% - Replaced with name of home
+homeDeletedMultiple: '&6Home &c%homename% &6was deleted!'
+# %argument% - Replaced with name of home that could not be found
+homeNotFound: '&cHome &4%argument% &cwas not found!'
+noHome: '&cYou do not have a home!'
+# %homename% - Replaced with name of home
+# %target% - Replaced with name of player
+homeDeletedSender: '&6Home &c%homename% &6for player &c%target% &6has been deleted!'
+# %homename% - Replaced with name of home
+# %target% - Replaced with name of player
+teleportingToHomeSender: '&6Teleporting to &c%target%&6s home &c%homename%'
+# %argument% - Name of unidentified item.
+itemNotFound: '&cItem &4%argument &ccould not be found!'
+# %item% - Replaced with name of item given
+# %amount% - Replaced with amount of item given
+itemGiven: '&6You have been given &c%amount% &6of &c%item%.'
+youAreNowAfk: '&5 * You are now AFK.'
+youAreNoLongerAfk: '&5* You are no longer AFK'
+repairHand: '&aThe item you are holding was repaired.'
+repairAll: '&aYour inventory has been repaired.'
+# %char% - Replaced with character that is not allowed. (E.g: ',')
+characterNotAllowed: '&cCharacter "%char%" is not allowed!'
+noKits: '&cThere is currently no available kits!'
+# %kit% - Replaced with kit that was given to player
+givenKit: '&aYou have received kit &2%kit%&a.'
+# %kit% - Replaced with kit that already exists
+kitAlreadyExists: '&cKit &4%kit% already exists!'
+# %kit% - Replaced with name of kit created
+kitCreated: '&aKit &2%kit% &ahas been created!'
+# %argument% - Replaced with the argument that is invalid
+invalidArgument: '&cArgument %argument% is invalid!'
+# %kit% - Replaced with kit that doesn't exist
+invalidKit: '&cKit &4%kit% &cis not a valid kit!'
+# %kit% - Replaced with kit that is given to the player
+# %player% - Replaced with target player that was given the kit
+playerGivenKit: '&aPlayer &2%player% &ahas been given kit &2%kit%&a.'
+# %kit% - Replaced with name of the kit deleted
+kitDeleted: '&aKit &2%kit% &ahas been deleted.'
+# %kit% - Replaced with name of the kit on cooldown
+# %cooldown% - Replaced with the length of the cooldown
+kitCooldown: '&cKit &4%kit% &c is on cooldown for &4%cooldown%'
+# %kit% - Replaced with the name of the kit that had it's cooldown reset
+resetKitCooldown: '&aSuccessfully reset kit &f%kit% &acooldown'
+# %kit% - Replaced with the name of the kit that had it's cooldown reset
+# %target% - Replaced with name of player that had their cooldown reset
+resetOtherPlayerKitCooldown: '&aReset kit &f%kit% &acooldown for player &f%target%'
+# %kit% - Replaced with the name of the kit that's firstjoin was toggled
+# %bool% - Replaced with either true/false
+kitSetFirstJoin: '&aKit &f%kit% &aas a first-join kit has been toggled to &c%bool%'
+# %kit% - Replaced with the name of the kit that's default cooldown was changed
+# %cooldown% - Replaced with kit's new cooldown
+kitSetDefaultCooldown: '&aKit &f%kit% &acooldown has been set to &c%cooldown%'
+# %player% - Replaced with name of player who banned the target
+ipBannedConnectionScreen: '&6IP-Banned by: &r%player%'

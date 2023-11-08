@@ -1,0 +1,104 @@
+#-----------------------------------------#
+#                                         #
+#          Just Essentials Reborn         #
+#                                         #
+#-----------------------------------------#
+#                                         #
+#              Version 1.0.0              #
+#                                         #
+#-----------------------------------------#
+
+# -= Customizability =-
+
+# ALL MESSAGES FOR PLUGIN ARE CONFIGURABLE
+# HEAD TO LANG.YML FILE FOR THIS
+
+# Allows you to set a custom permission prefix
+# NOTE: In documentation for this plugin, the prefix will always be referred to as 'jessentialsrb'
+customPermissionPrefix: 'jessentialsrb'
+
+# Set a custom prefix for the /broadcast command
+customBroadcastPrefix: '&4[&aBroadcast&4]'
+
+# Message of the day, sent to players on join 
+# Placeholder %player% - Replaced with the player who joins name
+motd: '&dWelcome &7%player% &dback to the server.'
+
+# Broadcast messages for when a player toggles their afk
+# Placeholder %player% - replaced with name of player
+afkBroadcastMessage: '&5 * %player% is now AFK'
+noLongerAfkBroadcastMessage: '&7 * %player% is no longer AFK'
+
+# The message a player receives when they are kicked for being AFK
+# Placeholder: %player% - replaced with players name
+afk-kick-message: '&7You have been kicked for being AFK!'
+
+# Enable or disable the MOTD
+motdOn: true
+
+# -= Options =-
+
+# Home Limits
+# Define how many homes seperate groups of players are allowed to have
+# The player must have the respective permission
+# Example: For a player to have the number of homes for 'vip', they must have the permission jessentialsrb.sethome.multiple.vip
+# Permission: jessentialsrb.sethome.multiple.[group]
+# NOTE: Player must also have permission jessentials.sethome.multiple by itself
+
+homes:
+  # Format: "group name: number"
+  admin: 15
+  moderator: 10
+  vip: 5
+
+# Whether or not to broadcast when a player is afk, and when they are no longer afk
+broadcastAfK: true
+
+# How long until a player should be marked AFK
+# (in minutes)
+time-until-afk: 15
+
+# Whether or not to kick a player when they are afk
+kick-on-afk: false
+
+# Teleportation Delay (Can be bypassed with jessentialsrb.tpdelay.bypass)
+# In seconds, put 0 to disable
+teleportationDelay: 3
+
+# Whether or not to enable teleport-safety, which prevents a player from taking damage for X seconds after teleported
+enable-teleport-safety: true
+
+# How many seconds should teleport-safety protect a player
+teleport-safety-length: 3
+
+# Whether or not players need individual permission per item for a hat
+# Example: Player must have permission "jessentialsrb.hat.type.wool" To use wool as a hat
+# Permission: jessentialsrb.hat.type.<item>
+# NOTE: Uses Bukkit Item ENUM Names (https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html)
+use-individual-item-permission-for-hat: false
+
+# Whether or not to use individual permissions to allow certain enchants with the /enchant command
+# Example: Player must have permission jessentialsrb.enchant.protection_environment to enchant armor with protection using /enchant
+# Permission: jessentialsrb.enchant.<enchantment name>
+use-individual-permission-for-enchant: true
+
+# Whether or not players need individual permissions to spawn certain items
+# Permission: jessentialsrb.item.<item name>
+permissionBasedItemSpawn: false
+
+# If enabled, a permission is not needed to use chat color
+noPermissionForChatColor: false
+
+# If enabled, when a player is sudoed they are able to execute any command ignoring permissions
+allPermissionSudo: false
+
+# If this is enabled, whenever available kits are listed to the player, a GUI preview will be used to display them
+# Only uses a minor amount of extra processing power and I believe it looks nice, so I would personally recommend leaving it on. 
+use-kit-gui-for-list: true
+
+# When enabled, bans will be broadcast in chat to the entire server. The ban message can be modified in the lang.yml file
+broadcastBans: true
+
+# Whether or not JEssentialsRB should automatically check for new updates
+# NOTE: I recommend you leave this on
+checkForNewUpdates: true
