@@ -35,12 +35,14 @@ public class JEssentialsRB {
 		}
 		return null;
 	}
+	
 	// Checks if a player is online with a specific name
 	public static boolean isPlayer(String name) {
 		Player p = getPlayer(name);
 		if (p == null) return false;
 		return true;
 	}
+	
 	// Checks if a player is online with a specific UUID
 	public static boolean isPlayer(UUID id) {
 		Player p = Bukkit.getPlayer(id);
@@ -117,55 +119,66 @@ public class JEssentialsRB {
 	}
 	
 	// Takes x amount of seconds and formats it into a string describing hours, minutes, etc.
-	public static String formatSeconds(Integer s) {
-		if (s < 60) {
-			return s.toString() + "s";
-		} else if (s < 3600) {
-			int remSec = s % 60;
-			return Integer.toString((s-remSec)/60) + "min " + Integer.toString(remSec) + "s";
-		} else if (s < 86400) {
-			int remSec = s % 3600;
-			String hours = Integer.toString((s-remSec)/3600) + "h ";
-			int remSec2 = remSec % 60;
-			String minutes = Integer.toString((remSec-remSec2)/60) + "min ";
-			return hours + minutes + Integer.toString(remSec2) + "s";
-		} else if (s < 604800) {
-			int remSec = s % 86400;
-			String days = Integer.toString((s-remSec)/86400) + "d ";
-			int remSec2 = remSec % 3600;
-			String hours = Integer.toString((remSec-remSec2)/3600) + "h ";
-			int remSec3 = remSec2 % 60;
-			String minutes = Integer.toString((remSec2-remSec3)/60) + "min ";
-			return days + hours + minutes + Integer.toString(remSec3) + "s";
-		} else if (s < 2419200) {
-			int remSec = s % 604800;
-			String weeks = Integer.toString((s-remSec)/604800) + "w ";
-			int remSec2 = remSec % 86400;
-			String days = Integer.toString((remSec-remSec2)/86400) + "d ";
-			int remSec3 = remSec2 % 3600;
-			String hours = Integer.toString((remSec2-remSec3)/3600) + "h ";
-			int remSec4 = remSec3 % 60;
-			String minutes = Integer.toString((remSec3-remSec4)/60) + "min ";
-			return weeks + days + hours + minutes + Integer.toString(remSec4) + "s";
-		} else if (s < 29030400) {
-			int remSec = s % 2419200;
-			String months = Integer.toString((s-remSec)/2419200) + "mo ";
-			int remSec2 = remSec % 604800;
-			String weeks = Integer.toString((remSec-remSec2)/604800) + "w ";
-			int remSec3 = remSec2 % 86400;
-			String days = Integer.toString((remSec2-remSec3)/86400) + "d ";
-			int remSec4 = remSec3 % 3600;
-			String hours = Integer.toString((remSec3-remSec4)/3600) + "h ";
-			int remSec5 = remSec4 % 60;
-			String minutes = Integer.toString((remSec4-remSec5)/60) + "min ";
-			return months + weeks + days + hours + minutes + Integer.toString(remSec5) + "s";
-		} else {
-			int remSec = s % 29030400;
-			String years = Integer.toString((s-remSec)/29030400) + "y ";
-			int remSec2 = remSec % 2419200;
-			String months = Integer.toString((remSec-remSec2)/2419200) + "mo ";
-			return years + months;
+	public static String formatSeconds(Long s) {
+		
+		TimeSeconds[] units = TimeSeconds.values();
+		String formatted = "";
+		Long secondsLeft = s;
+		
+		for (int i = units.length-1; i > -1; i--) { // looping through units backwards
+			if (secondsLeft >= units[i].getSeconds()) {
+				
+				Long remainder = secondsLeft % units[i].getSeconds();
+				
+				formatted += Long.toString((secondsLeft - remainder)/units[i].getSeconds()) 
+						+ units[i].getUnit() + " "; // Building string longest unit -> shortest unit
+				
+				secondsLeft = remainder;
+			}
 		}
+		
+		return formatted.substring(0, formatted.length()); // Removing last space at end of string
 	}
-
+	
+	// Gets a total time duration using a "formatted seconds" string such as supplied above
+	// Will return null if an invalid string is supplied
+	public static Long getDuration(String s) {
+		
+		String[] times = s.strip().split(" ");
+		HashMap<String, Long> units = TimeSeconds.getUnitMap(); // Gets unit map with long values
+		Long total = 0L;
+		
+		for (String time : times) {
+			
+			int splitIndex = -1;
+			
+			for (int i = time.length()-1; i >= 0; i--) { // loop through time backwards
+				if (Character.isDigit(time.charAt(i))) { // checks for first char that isn't ASCII
+					splitIndex = i+1; // this becomes index we split string into Long & unit
+					break;
+				}
+			}
+			
+	
+			if (splitIndex == -1 || splitIndex == time.length()) return null; // invalid time provided
+			
+			int factor;
+			String unit;
+			
+			try {
+				factor = Integer.parseInt(time.substring(0, splitIndex));
+			} catch (NumberFormatException e) {
+				return null; // invalid time provided
+			}
+			
+			unit = time.substring(splitIndex);
+			Long seconds = units.get(unit);
+			
+			if (seconds == null) return null; // invalid time provided
+			
+			total += (factor*seconds); // adds # of seconds to total
+ 		}
+		
+		return total;
+	}
 }

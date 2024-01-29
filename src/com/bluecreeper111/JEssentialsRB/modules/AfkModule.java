@@ -16,7 +16,6 @@ import com.bluecreeper111.JEssentialsRB.main.JEssentialsRB;
 import com.bluecreeper111.JEssentialsRB.main.LanguageFile;
 import com.bluecreeper111.JEssentialsRB.main.Main;
 import com.bluecreeper111.JEssentialsRB.main.Permissions;
-import com.sun.istack.internal.Nullable;
 
 public class AfkModule implements Listener {
 	
@@ -42,7 +41,7 @@ public class AfkModule implements Listener {
 	}
 	
 	// Toggles afk for a player
-	public void toggleAfk(Player p, @Nullable Boolean toggle) {
+	public void toggleAfk(Player p, Boolean toggle) {
 		boolean brafk = plugin.getConfig().getBoolean("broadcastAfk");
 		if (toggle == null) {
 			if (afk.contains(p.getUniqueId())) {
@@ -75,7 +74,7 @@ public class AfkModule implements Listener {
 		long time = plugin.getConfig().getInt("time-until-afk") * 1200L;
 		afkmove.put(p.getUniqueId(), Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
 			public void run() {
-				if (Bukkit.getPlayer(p.getUniqueId()) != null
+				if (Bukkit.getPlayer(p.getUniqueId()) != null 
 						&& Bukkit.getPlayer(p.getUniqueId()).isOnline()) {
 					if (plugin.getConfig().getBoolean("kick-on-afk")
 							&& !perm.hasPermission(p, "afk.kickexempt")) {

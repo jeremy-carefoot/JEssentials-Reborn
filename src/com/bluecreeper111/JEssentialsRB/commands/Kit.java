@@ -45,9 +45,9 @@ public class Kit extends JERBCommand {
 				}
 				if (!plugin.getConfig().getBoolean("use-kit-gui-for-list")
 						|| (!(sender instanceof Player))) {
-					String list = "§6Kits: §r";
+					String list = "ï¿½6Kits: ï¿½r";
 					for (String s : k) {
-						list += JEssentialsRB.color(s) + "§r, ";
+						list += JEssentialsRB.color(s) + "ï¿½r, ";
 					}
 					sender.sendMessage(ChatColor.translateAlternateColorCodes('&', list));
 				} else {
@@ -214,7 +214,7 @@ public class Kit extends JERBCommand {
 							if (JEssentialsRB.isInt(args[2])) {
 								kits.setKitCooldown(args[0], Integer.parseInt(args[2]), null);
 								sender.sendMessage(LanguageFile.getMessage("kitSetDefaultCooldown").replace("%kit%", args[0])
-										.replace("%cooldown%", JEssentialsRB.formatSeconds(Integer.parseInt(args[2]))));
+										.replace("%cooldown%", JEssentialsRB.formatSeconds(Long.parseLong(args[2]))));
 							} else {
 								sender.sendMessage(LanguageFile.getMessage("invalidNumber").replace("%argument%", args[2]));
 							}

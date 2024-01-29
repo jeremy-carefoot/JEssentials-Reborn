@@ -29,7 +29,6 @@ import com.bluecreeper111.JEssentialsRB.utils.QuickMessage;
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Multimaps;
-import com.sun.istack.internal.Nullable;
 
 public class KitModule {
 	
@@ -47,6 +46,7 @@ public class KitModule {
 	private final HashMap<UUID, HashMap<Integer, JEGui>> playerGUI = new HashMap<>();
 	private final HashMap<String, JEGui> kitPreviews = new HashMap<>();
 	private Main plugin;
+	
 	public KitModule(Main plugin) {
 		if (!kits.isSet("kits")) {
 			kits.createSection("kits");
@@ -116,7 +116,7 @@ public class KitModule {
 		Multimap<Integer, String> pages = organizePages(p, permissibleKits);
 		List<String> kits = new ArrayList<>(pages.get(page));
 		int slotnumber = (int)((Math.ceil((double)kits.size()/ 7.0))*9) + 18;
-		JEGui gui = new JEGui(slotnumber > 54 ? 54 : slotnumber, "§6§lKits", id);
+		JEGui gui = new JEGui(slotnumber > 54 ? 54 : slotnumber, "ï¿½6ï¿½lKits", id);
 		int slot = 10;
 		int totalslots = 0;
 		for (String k : kits) {
@@ -135,9 +135,9 @@ public class KitModule {
 			// Adds content to the preview lore
 			ItemStack item = new ItemStack(m, 1);
 			ItemMeta meta = item.getItemMeta();
-			meta.setDisplayName(k.contains("&") ? JEssentialsRB.color(k) : "§r§a" + k);
+			meta.setDisplayName(k.contains("&") ? JEssentialsRB.color(k) : "ï¿½rï¿½a" + k);
 			List<String> lore = new ArrayList<>();
-			lore.add("§eContents:");
+			lore.add("ï¿½eContents:");
 			// Sorts so that items with no lore and same type will appear as not multiple stacks but one large quantity in preview
 			// (E.g: 128 Raw Iron)
 			HashMap<Integer, ItemStack> items = convertContents(k);
@@ -156,7 +156,7 @@ public class KitModule {
 					Multimaps.forMap(materials), HashMultimap.<Material, Integer>create());
 			for (Entry<Material, Collection<Integer>> entry : multimap.asMap().entrySet()) {
 				if (entry.getValue().size() == 1) {
-					lore.add("§7- " + JEssentialsRB.formatEnumName(entry.getKey().toString()) + ", " + 
+					lore.add("ï¿½7- " + JEssentialsRB.formatEnumName(entry.getKey().toString()) + ", " + 
 							items.get(entry.getValue().toArray()[0]).getAmount());
 					one = true;
 					continue;
@@ -165,18 +165,18 @@ public class KitModule {
 				for (Integer i : entry.getValue()) {
 					total += items.get(i).getAmount();
 				}
-				lore.add("§7- " + JEssentialsRB.formatEnumName(entry.getKey().toString()) + ", " + total);
+				lore.add("ï¿½7- " + JEssentialsRB.formatEnumName(entry.getKey().toString()) + ", " + total);
 				one =  true;
 			}
 			for (ItemStack is : hasMeta) {
-				lore.add("§7- " + ChatColor.translateAlternateColorCodes('&', is.getItemMeta().getDisplayName()) + "§r §7(" +
+				lore.add("ï¿½7- " + ChatColor.translateAlternateColorCodes('&', is.getItemMeta().getDisplayName()) + "ï¿½r ï¿½7(" +
 						JEssentialsRB.formatEnumName(is.getType().toString()) + "), " + is.getAmount());
 				one = true;
 			}
 			if (!one) {
-				lore.add("§c(No Contents)");
+				lore.add("ï¿½c(No Contents)");
 			}
-			lore.add("§eArmor:");
+			lore.add("ï¿½eArmor:");
 			// When managing armor contents, 0 is helmet down. (3 is boots)
 			// Adds armor contents to preview in lore
 			one = false;
@@ -185,16 +185,16 @@ public class KitModule {
 				ItemStack armor = map.get(i);
 				if (armor == null) continue;
 				if (armor.hasItemMeta()) {
-					lore.add("§7- " + ChatColor.translateAlternateColorCodes('&', armor.getItemMeta().getDisplayName()) + "§r §7(" + 
+					lore.add("ï¿½7- " + ChatColor.translateAlternateColorCodes('&', armor.getItemMeta().getDisplayName()) + "ï¿½r ï¿½7(" + 
 							JEssentialsRB.formatEnumName(armor.getType().toString()));
 					one = true;
 				} else {
-					lore.add("§7- " + JEssentialsRB.formatEnumName(armor.getType().toString()));
+					lore.add("ï¿½7- " + JEssentialsRB.formatEnumName(armor.getType().toString()));
 					one = true;
 				}
 			}
 			if (!one) {
-				lore.add("§c(No Armor)");
+				lore.add("ï¿½c(No Armor)");
 			}
 			meta.setLore(lore);
 			item.setItemMeta(meta);
@@ -208,7 +208,7 @@ public class KitModule {
 				if (pages.containsKey(page +1 )) {
 					ItemStack nextPage = new ItemStack(Material.ARROW, 1);
 					ItemMeta meta2 = nextPage.getItemMeta();
-					meta2.setDisplayName("§6§lNext Page");
+					meta2.setDisplayName("ï¿½6ï¿½lNext Page");
 					nextPage.setItemMeta(meta2);
 					gui.setItem(53, nextPage);
 					gui.setItemAction(53, new Runnable() {
@@ -226,7 +226,7 @@ public class KitModule {
 			if (pages.containsKey(page - 1)) {
 				ItemStack lastPage = new ItemStack(Material.ARROW, 1);
 				ItemMeta pagemeta = lastPage.getItemMeta();
-				pagemeta.setDisplayName("§6§lPrevious Page");
+				pagemeta.setDisplayName("ï¿½6ï¿½lPrevious Page");
 				lastPage.setItemMeta(pagemeta);
 				int s = gui.getSize() - 9;
 				gui.setItem(s, lastPage);
@@ -305,7 +305,7 @@ public class KitModule {
 					kits.set("kits." + kit + ".display-item", item.getType().toString());
 					saveFile();
 					p.sendMessage(LanguageFile.getMessage("kitCreated")
-							.replaceAll("%kit%", "§r" + kit + "§r"));
+							.replaceAll("%kit%", "ï¿½r" + kit + "ï¿½r"));
 					dialogue.end();
 				}
 			}
@@ -313,12 +313,12 @@ public class KitModule {
 		dialogue.addAction(0, "cancel", new Runnable() {
 			public void run() {
 				p.sendMessage(LanguageFile.getMessage("kitCreated")
-						.replaceAll("%kit%", "§r" + kit + "§r"));
+						.replaceAll("%kit%", "ï¿½r" + kit + "ï¿½r"));
 				dialogue.end();
 			}
 		});
-		p.sendMessage("§6[!] §ePlease hold a display-item for the kit preview GUI and type §a'done'§e."
-				+ "\n§6[!] §eIf you would not like a display-item and prefer the default (paper), type §c'cancel'§e.");
+		p.sendMessage("ï¿½6[!] ï¿½ePlease hold a display-item for the kit preview GUI and type ï¿½a'done'ï¿½e."
+				+ "\nï¿½6[!] ï¿½eIf you would not like a display-item and prefer the default (paper), type ï¿½c'cancel'ï¿½e.");
 		dialogue.start();
 	}
 	
@@ -355,7 +355,7 @@ public class KitModule {
 				}
 			} else {
 				p.sendMessage(LanguageFile.getMessage("kitCooldown").replace("%kit%", JEssentialsRB.color(kit))
-						.replace("%cooldown%", JEssentialsRB.formatSeconds(cd)));
+						.replace("%cooldown%", JEssentialsRB.formatSeconds((long)cd)));
 			}
 		} else {
 			QuickMessage.noPermission(p);
@@ -419,7 +419,7 @@ public class KitModule {
 				gui.setNewOwner(p.getUniqueId());
 				gui.openGui();
 			} else {
-				JEGui gui = new JEGui(54, "§6§lKit Preview: §r§a" + kit, p.getUniqueId());
+				JEGui gui = new JEGui(54, "ï¿½6ï¿½lKit Preview: ï¿½rï¿½a" + kit, p.getUniqueId());
 				HashMap<Integer, ItemStack> armor = this.convertArmor(kit);
 				HashMap<Integer, ItemStack> items = this.convertContents(kit);
 				for (int i = 0; i < 36; i++) {
@@ -437,7 +437,7 @@ public class KitModule {
 				}
 				ItemStack exit = new ItemStack(Material.BARRIER);
 				m = exit.getItemMeta();
-				m.setDisplayName("§c§lExit");
+				m.setDisplayName("ï¿½cï¿½lExit");
 				exit.setItemMeta(m);
 				gui.setItem(53, exit);
 				gui.setItemAction(53, new Runnable() {
@@ -471,7 +471,7 @@ public class KitModule {
 	}
 	
 	// Sets a kits default cooldown or specific player cooldown (in seconds)
-	public void setKitCooldown(String kit, Integer cd, @Nullable UUID id) {
+	public void setKitCooldown(String kit, Integer cd, UUID id) {
 		Long time = System.currentTimeMillis() + (cd*1000);
 		if (id == null) {
 			kits.set("kits." + kit + ".defaultcooldown", cd);
